@@ -108,11 +108,11 @@
       </div>
       <div class="col-md-7 col-lg-8">
         <h4 class="mb-3">Billing Details</h4>
-        <form class="needs-validation" novalidate>
+        <form class="needs-validation" novalidate action="/createOrder" method="post" target="_parent">
           <div class="row g-3">
             <div class="col-sm-6">
               <label for="firstName" class="form-label">Full Name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="stephano bazaar" value="" required>
+              <input type="text" class="form-control" id="firstName" placeholder="stephano bazaar" value="" required name="customername">
               <div class="invalid-feedback">
                 Valid full name is required.
               </div>
@@ -120,7 +120,7 @@
 
             <div class="col-sm-6">
               <label for="lastName" class="form-label">Contact</label>
-              <input type="text" class="form-control" id="lastName" placeholder="+255 654564546" value="" required>
+              <input type="text" class="form-control" id="lastName" placeholder="+255 654564546" value="" required name="contact">
               <div class="invalid-feedback">
                 Valid Contact is required.
               </div>
@@ -129,7 +129,7 @@
             <div class="col-12">
                 <div class="col-md-6">
                     <label for="country" class="form-label">Product Name</label>
-                    <input type="text" class="form-control" id="address2" placeholder="Product Name">
+                    <input type="text" class="form-control" id="address2" placeholder="Product Name" name="productname">
                     <div class="invalid-feedback">
                       Product name is required
                     </div>
@@ -137,7 +137,7 @@
 
                   <div class="col-md-6">
                     <label for="country" class="form-label">Quantity</label>
-                    <input type="number" class="form-control" id="address2" placeholder="Enter Product Quantity">
+                    <input type="number" class="form-control" id="address2" placeholder="Enter Product Quantity" name="quantity">
                     <div class="invalid-feedback">
                       Quantity.
                     </div>
@@ -146,7 +146,7 @@
 
             <div class="col-12">
               <label for="email" class="form-label">Price<span class="text-body-secondary">(In $)</span></label>
-              <input type="email" class="form-control" id="email" placeholder="eg: 100$">
+              <input type="email" class="form-control" id="email" placeholder="eg: 100$" name="price" required>
               <div class="invalid-feedback">
                 Please enter a valid Price
               </div>
@@ -154,7 +154,7 @@
 
             <div class="col-12">
               <label for="address" class="form-label">Email</label>
-              <input type="text" class="form-control" id="address" placeholder="you@example.com" required>
+              <input type="text" class="form-control" id="address" placeholder="you@example.com" required name="email">
               <div class="invalid-feedback">
                 Please enter your Email.
               </div>
@@ -162,7 +162,7 @@
 
             <div class="col-12">
               <label for="address2" class="form-label">Address  <span class="text-body-secondary">(important)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="eg: ilala, dar es salaam">
+              <input type="text" class="form-control" id="address2" placeholder="eg: ilala, dar es salaam" name="address">
             </div>
 
             <div class="col-md-5">
@@ -175,7 +175,7 @@
 
             <div class="col-md-4">
                 <label for="country" class="form-label">State/Region</label>
-                <input type="text" class="form-control" id="address2" placeholder="eg: dar es salaam">
+                <input type="text" class="form-control" id="address2" placeholder="eg: dar es salaam" name="region">
                 <div class="invalid-feedback">
                   State/Region.
                 </div>
@@ -186,7 +186,7 @@
 
             <div class="col-md-3">
               <label for="zip" class="form-label">Zip/postal code</label>
-              <input type="text" class="form-control" id="zip" placeholder="eg:21221 or 0128" required>
+              <input type="text" class="form-control" id="zip" placeholder="eg:21221 or 0128" required name="zip">
               <div class="invalid-feedback">
                 Zip/postal code required.
               </div>
@@ -199,7 +199,7 @@
           <h4 class="mb-3">Payment Methods</h4>
 
           <div class="my-3">
-            <select class="form-control">
+            <select class="form-control" name="payment">
               <option value="debit">Debit Card</option>
               <option value="credit">Credit Card</option>
               <option value="Paypal">Paypal</option>
@@ -209,7 +209,7 @@
           <div class="row gy-3">
             <div class="col-md-6">
               <label for="cc-name" class="form-label">Card Holder Name</label>
-              <input type="text" class="form-control" id="cc-name" placeholder="stephan bazaar" required>
+              <input type="text" class="form-control" id="cc-name" placeholder="stephan bazaar" required name="cardholder">
               <small class=" text-light">Full name as displayed on card</small>
               <div class="invalid-feedback">
                 Name on card is required
@@ -218,7 +218,7 @@
 
             <div class="col-md-6">
               <label for="cc-number" class="form-label">Credit card number</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="000-000-000-000" required>
+              <input type="text" class="form-control" id="cc-number" placeholder="000-000-000-000" required name="cardnumber">
               <div class="invalid-feedback">
                 Credit card number is required
               </div>
@@ -226,7 +226,7 @@
 
             <div class="col-md-3">
               <label for="cc-expiration" class="form-label">Expiration</label>
-              <input type="date" class="form-control" id="cc-expiration" placeholder="" required>
+              <input type="text" class="form-control" id="cc-expiration" placeholder="eg: 12/25" required name="expiredate">
               <div class="invalid-feedback">
                 Expiration date required
               </div>
@@ -234,7 +234,7 @@
 
             <div class="col-md-3">
               <label for="cc-cvv" class="form-label">CVV</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="000" required>
+              <input type="text" class="form-control" id="cc-cvv" placeholder="000" required name="cvv">
               <div class="invalid-feedback">
                 Security code required
               </div>
@@ -243,7 +243,7 @@
 
           <hr class="my-4">
 
-          <a href="/" class="w-100 btn  btn-lg btn-secondary" type="submit">Create Order</a>
+          <button class="w-100 btn  btn-lg btn-secondary" type="submit">Create Order</button>
         </form>
       </div>
     </div>

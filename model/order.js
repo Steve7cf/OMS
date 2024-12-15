@@ -5,12 +5,12 @@ const orderModel = new mongoose.Schema({
         required:[true, "Please Enter Order Id"],
         unique:[true, "Order ID should be unique"]
     },
-    customerName:{
+    customername:{
         type:String,
         lowercase:true,
         required:[true, "Please Enter customer name"],
     },
-    productName:{
+    productname:{
         type:String,
         required:[true, "Please Enter Product name"],
     },
@@ -34,21 +34,21 @@ const orderModel = new mongoose.Schema({
         type:String,
         default:"1"
     },
-    paymentMethod:{
+    paymentmethod:{
         type:String,
         default:"credit card"
     },
-    creditCardHolder:{
+    creditcardholder:{
         type:String,
         default:"1"
     },
-    cardNumber:{
+    cardnumber:{
         type:String,
         default:"000-000-000-000"
     },
-    expirationDate:{
-        type:Date,
-        default:Date.now()
+    expirationdate:{
+        type:String,
+        required:[true, "please date is required"]
     },
     cvv:{
         type:String,
@@ -65,7 +65,6 @@ const orderModel = new mongoose.Schema({
     status:{
         type:String,
         enum:["pending", "delivered"],
-        default:"pending"
     },
 },
     {timestamps:true,}

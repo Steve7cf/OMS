@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const userModel = new mongoose.Schema({
-    username:{
+    userName:{
         type:String,
         lowercase:true,
         required:[true, "Please Enter User Name"],
@@ -15,7 +15,6 @@ const userModel = new mongoose.Schema({
     password:{
         type:String,
         required:[true, "Please Enter Password"],
-        unique:[true, "Name Already Taken"],
         minlength:[6, "Password too short"]
     },
     role:{

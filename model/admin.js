@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const adminModel = new mongoose.Schema({
-    username:{
+    userName:{
         type:String,
         lowercase:true,
         required:[true, "Please Enter User Name"],

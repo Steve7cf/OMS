@@ -1,17 +1,38 @@
-POST http://localhost:3000/auth
+POST http://localhost:3000/createAdmin
 Content-Type: application/json
 
 {
+    "username":"admin",
     "email":"stephanbazaar@gmail.com",
-    "password":"123456"
+    "password":"admin123"
 }
 
 ###
-POST http://localhost:3000/create
+POST http://localhost:3000/authAdmin
 Content-Type: application/json
 
 {
-    "username":"darkcoder",
-    "email":"stephanbazaar99@gmail.com",
-    "password":"admin"
+    "username":"admin",
+    "email":"stephanbazaar@gmail.com",
+    "password":"admin123"
+}
+
+###
+POST http://localhost:3000/createOrder
+Content-Type: application/json
+
+{
+    "customername":"stephano mwita",
+    "productname":"rasberry pi 4",
+    "quantity":"1",
+    "contact":"+255654120526",
+    "address":"ilala,dar es salaam",
+    "region":"dar es salaam",
+    "zip":"0128",
+    "payment":"debit card",
+    "cardholder":"stephano mwita chacha",
+    "cardnumber":"30110048550",
+    "expiredate":"1/12/2024",
+    "cvv":"567",
+    "price":"500000"  
 }
