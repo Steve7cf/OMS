@@ -1,4 +1,9 @@
-const model = require("../model/model");
+const userModel = require("../model/model");
+const adminModel = require("../model/admin");
+const orderModel = require("../model/order");
+const tokenModel = require("../model/token");
+
+
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -31,6 +36,7 @@ const signup = (req, res) => {
 };
 
 // dashboard
+
 const dashboard = (req, res) => {
   res.render('dashboard')
 }
