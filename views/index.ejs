@@ -1,0 +1,189 @@
+<%- include('partials/header.ejs'); %>
+<style>
+  .navbar{
+    background: transparent;
+  }
+  #nav-container{
+    background-color: transparent;
+  }
+  body {
+  background: linear-gradient(
+    to top,
+    #0c0c0c,#2c3e50
+  );
+}
+.card{
+  background: linear-gradient(
+    to top,
+    #1b1b1b,#2c3e50
+  );
+  border: none;
+}
+#hero--txt{
+  font-weight: 700;
+  color: #f2f2f2;
+}
+#link{
+  background:#2c3e50;
+  width: 300px;
+}
+section{
+  height: 500px;
+}
+::-webkit-scrollbar{
+    width: 0px;
+}
+</style>
+<body class="px-3">
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid  p-3 rounded-3" id="nav-container">
+            <a class="navbar-brand p-3 mx-3 fs-2" href="#" style="color: orange;">TANAIR CARGO</a>
+            <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active text-light" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-light" href="#about">About Us</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link text-light" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item navba">
+                        <a class="nav-link text-light" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  <section class="hero-section text-center d-flex justify-content-center align-items-center" data-aos="fade-in" style="height: 400px;">
+    <div class="container">
+        <h1 class="display-4" id="hero--txt">Your Reliable Shipping Partner</h1>
+        <p class="lead text-light">Seamless and Efficient Cargo Transportation</p>
+        <form action="/order" method="get">
+          <button type="submit" class="btn btn-secondary btn-lg w-lg-25 shadow-lg my-3">Create Order Now</button>
+        </form>
+    </div>
+</section>
+
+<div class="container px-4 py-5 d-flex align-items-center justify-content-evenly flex-column" id="about" style="color: white;">
+    <h2 class="pb-2 border-bottom">About Us</h2>
+      <div class="col-lg-6 d-flex align-items-center justify-content-evenly">
+        <div>
+          <p class="p-3">
+            TanAir Investment is a leading logistics company specializing 
+            in air and sea cargo cargo transportation between China and East
+             Africa. Established in 2018, we have rapidly risen to become a top
+              logistics service provider in East Africa, as recognized by our
+               award at the International Trade Fair 2023 in Dar es Salaam.
+                Our commitment to customer satisfaction is the cornerstone 
+                of our success.
+                <br><br>
+            While TanAir excels in air cargo, our sister company, TanSea Cargo,
+             provides reliable sea cargo solutions. Together, we support both
+              import and export between East Africa and China, offering 
+              comprehensive logistics support for businesses operating
+               in the region. Our focus on building strong, trusting 
+               relationships with our clients guarantees optimal results.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="container px-4 py-5" id="services" style="color: white;">
+    <h2 class="pb-2 border-bottom">Our Services</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis bg-body-secondary p-2 rounded-3 text-light d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3">
+          <i class="fa fa-plane"></i>
+        </div>
+        <div>
+          <h3 class="fs-2 text-light">Air Cargo Transportation</h3>
+          <p>
+            TanAir Cargo offers fast and efficient delivery of goods across long distances.
+          </p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis  d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 bg-body-secondary p-2 rounded-3 ">
+          <i class="fa fa-tasks"></i>
+        </div>
+        <div>
+          <h3 class="fs-2 text-light">Customs Clearance</h3>
+          <p>
+            TanAir makes sure all goods are officially authorized to enter or leave a country's territory
+          </p>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div class="icon-square text-body-emphasis  d-inline-flex align-items-center justify-content-center fs-4 flex-shrink-0 me-3 bg-body-secondary p-2 rounded-3 ">
+          <i class="fa fa-truck"></i>
+        </div>
+        <div>
+          <h3 class="fs-2 text-light">Local Delivery</h3>
+          <p>
+            Transporting goods or packages from a distribution center, warehouse to a customer set area.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+    <footer class="container-fluid bg-transparent text-light py-4" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>TanAir Investment</h5>
+                    <p>
+                        we pride ourselves on being your ultimate partner in logistics solutions
+                    </p>
+                    <p class="col  gap-3 d-flex justify-content-center align-items-center">
+                        <strong>
+                            <a href="" class="text-light fs-3"></a>
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                        </strong>
+                        <strong>
+                            <a href="" class="text-light fs-3">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </strong>
+                        <strong>
+                            <a href="" class="text-light fs-3"></a>
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </strong>
+                        <strong>
+                            <a href="" class="text-light fs-3"></a>
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </strong>
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h5>Contact Us</h5>
+                    <p>
+                        <strong>Address:</strong> Kariakoo & chui, Dar es salaam<br>
+                        <strong>Phone:</strong> +255717799691 | +255744646755 (TanSea)<br>
+                        <strong>Email:</strong> info@tanAirCargo.com
+                    </p>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2024. TanAir Investment Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="icons/js/all.min.js"></script>
+</body>
+</html>

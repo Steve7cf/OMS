@@ -1,0 +1,54 @@
+<%- include('partials/header.ejs'); %>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100%;
+        background: linear-gradient(to top,
+                #0c0c0c, #2c3e50);
+    }
+    .card{
+        color: aliceblue;
+        background-color: #2c3e50;
+    }
+    .btn{
+        background: #365e87;
+        border: none;
+        color: white;
+        font-weight: 600;
+    }
+</style>
+
+<body>
+    <div class="container  col-lg-4 col-md-4 col-sm-12 rounded-3 p-3">
+        <div class="row justify-content-center">
+            <div class="col-md-12 col-lg-12">
+                <div class="card mt-5">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Get Verified</h5>
+                        <form>
+                            <div class="mb-3">
+                                <label for="username" class="form-label">Email</label>
+                                <input type="text" class="form-control" id="email" placeholder="Enter Email">
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" placeholder="Enter password">
+                            </div>
+                            <button type="submit" class="btn w-100">Login</button>
+                        </form>
+                        <div class="container d-flex justify-content-between align-item-center p-3">
+                            <a href="/signup" class="text-secondary" style="text-decoration: none;">Signup</a>
+                            <a href="/" class="text-secondary" style="text-decoration: none;">Forgot password?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
