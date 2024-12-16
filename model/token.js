@@ -2,9 +2,7 @@ const mongoose = require('mongoose')
 const tokenModel = new mongoose.Schema({
     token:{
         type:String,
-        lowercase:true,
-        required:[true, "Please Enter User Name"],
-        unique:[true, "Name Already Taken"]
+        required:[true, "Token is required"]
     },
     role:{
         type:String,

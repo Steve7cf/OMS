@@ -36,3 +36,19 @@ Content-Type: application/json
     "cvv":"567",
     "price":"500000"  
 }
+
+
+###
+POST http://localhost:3000/genToken
+
+###
+POST http://localhost:3000/allToken
+
+###
+
+POST http://localhost:3000/verifyToken
+Content-Type: application/json
+
+{
+    "tokenData":"da363ece"
+}

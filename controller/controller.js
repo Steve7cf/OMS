@@ -212,8 +212,69 @@ const deleteOrder = (req, res) => {res.render("auth")}
 const updateOrder= (req, res) => {res.render("index")}
 
 // token
-const genToken = (req, res) => {}
-const verifyToken = (req, res) => {}
+const genToken = async(req, res, next) => {
+  try {
+    // generating token
+    const accessToken = crypto.randomBytes(4).toString('hex')
+
+    // create token data
+    const newToken = await tokenModel.create({token:accessToken})
+    if(!newToken){
+      res.status(500)
+      throw new Error("You Can't create new Access token!")
+    }
+    res.redirect("/dashboard")
+  } catch (err) {
+    next(err)
+  }
+
+
+}
+const allToken = async(req, res) => {
+  try{
+    const tokenRecord = await tokenModel.find()
+    if(!tokenRecord){
+      res.status(404)
+      req.flash("info", "No Token Record Found!")
+      return res.redirect("/dashboard")
+    }
+
+    res.json(tokenRecord)
+  }catch(err){
+    next(err)
+  }
+}
+const verifyToken = async(req, res, next) => {
+  const{tokenData} = req.body
+
+  if(token.length = null){
+    req.flash("info", "Please Enter Token")
+    res.redirect('/token')
+  }
+
+  // find token data
+  try {
+    const validToken = await tokenModel.findOne({token:tokenData})
+    if(!validToken){
+      req.flash("info", "Please Enter Valid Token")
+      return res.redirect("/token")
+    }
+
+    await jwt.sign({role:validToken.role, id:validToken.id}, process.env.ACCESS_TOKEN, {expiresIn:5*60*1000}, (err, valid) => {
+      if(err){
+        res.status(404)
+        throw new Error("Internal Server Error")
+      }
+      if(valid){
+        res.cookie("signupToken", valid, {maxAge:50*60*1000})
+        req.session.isAuth = true
+        res.redirect("/signup")
+      }
+    } )
+  } catch (err) {
+    next(err)
+  }
+}
 
 // logout
 const logoutUser = (req, res, next) => {
@@ -268,5 +329,6 @@ module.exports = {
   authAdmin,
   adminPanel,
   createAdmin,
-  orderPage
+  orderPage,
+  allToken
 };

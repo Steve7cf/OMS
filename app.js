@@ -67,7 +67,7 @@ try {
 // error handling
 function errorHandler(err, req, res, next) {
   const statusCode = err.statusCode || 500;
-  res.status(statusCode).render("errorPage", {error:err.message, status:statusCode});
+  res.status(statusCode).render("errorPage", {error:err, status:statusCode});
   
 }
 
