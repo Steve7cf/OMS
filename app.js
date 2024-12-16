@@ -66,11 +66,8 @@ try {
 
 // error handling
 function errorHandler(err, req, res, next) {
-  console.error(err.message);
   const statusCode = err.statusCode || 500;
-  const errMessage = req.flash("error")
-  console.log(errMessage)
-  res.status(statusCode).render("403", {error:err.message, status:statusCode});
+  res.status(statusCode).render("errorPage", {error:err.message, status:statusCode});
   
 }
 
