@@ -1,4 +1,13 @@
-<%- include('partials/header.ejs'); %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TANAIR CARGO</title>
+    <link rel="stylesheet" href="assets/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="icons/css/all.min.css">
+    <link rel="shortcut icon" href="assets/images/logo.png" type="image/x-icon">
+</head>
 <style>
   .navbar{
     background: transparent;
@@ -65,7 +74,7 @@ section{
     <div class="container">
         <h1 class="display-4" id="hero--txt">Your Reliable Shipping Partner</h1>
         <p class="lead text-light">Seamless and Efficient Cargo Transportation</p>
-        <form action="/order" method="get">
+        <form action="/pages/order" method="get">
           <button type="submit" class="btn btn-secondary btn-lg w-lg-25 shadow-lg my-3">Create Order Now</button>
         </form>
     </div>
@@ -183,4 +192,7 @@ section{
     </footer>
 
     
-<%- include('partials/footer.ejs'); %>
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script defer src="icons/js/all.min.js"></script>
+    </body>
+    </html>

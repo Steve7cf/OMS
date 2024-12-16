@@ -43,9 +43,26 @@ app.use(logger("dev"));
 app.use(flash());
 app.use(helmet())
 
-// routes
-const routes = require("./routes/routes");
-app.use("/", routes);
+// home route
+const home = require("./routes/home");
+app.use("/", home);
+
+// pages route
+const pages = require("./routes/pages");
+app.use("/pages", pages);
+
+
+// users create route
+const users = require("./routes/users");
+app.use("/users", users);
+
+// admin routes
+const admin = require("./routes/admin");
+app.use("/admin", admin);
+
+// order routes
+const order = require("./routes/order");
+app.use("/order", order);
 
 // exporting app to bin
 try {

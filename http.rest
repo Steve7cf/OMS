@@ -39,16 +39,20 @@ Content-Type: application/json
 
 
 ###
-POST http://localhost:3000/genToken
+POST http://localhost:3000/admin/genToken
 
 ###
-POST http://localhost:3000/allToken
+POST http://localhost:3000/users/all
 
 ###
 
-POST http://localhost:3000/verifyToken
+POST http://localhost:3000/users/token/verify
 Content-Type: application/json
 
 {
-    "tokenData":"da363ece"
+    "tokenData":"0fcc9934"
 }
+
+###
+POST http://localhost:3000/order/update/675efe0c9510dc37d073b6c4
+

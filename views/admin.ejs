@@ -34,7 +34,7 @@
                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         <% } %>
-                        <form action="/authAdmin" method="post" target="_parent">
+                        <form action="/admin/auth" method="post" target="_parent">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Email</label>
                                 <input type="text" class="form-control" id="email" placeholder="Enter Email" name="email">
@@ -50,7 +50,4 @@
             </div>
         </div>
     </div>
-    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+<%- include('partials/footer.ejs'); %>

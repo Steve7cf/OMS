@@ -34,7 +34,7 @@
                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                             </div>
                         <% } %>
-                        <form action="/verifyToken" method="post" target="_parent">
+                        <form action="/users/token/verify" method="post" target="_parent">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Token</label>
                                 <input type="text" class="form-control" id="email" placeholder="Enter Access Token" name="tokenData">
@@ -42,7 +42,7 @@
                             <button type="submit" class="btn w-100">Authenticate</button>
                         </form>
                         <div class="container d-flex justify-content-between align-item-center p-3">
-                            <a href="/login" class="text-secondary" style="text-decoration: none;">Login here</a>
+                            <a href="/pages/login" class="text-secondary" style="text-decoration: none;">Login here</a>
                             <a href="/" class="text-secondary" style="text-decoration: none;">Go Back</a>
                         </div>
                     </div>
@@ -50,7 +50,4 @@
             </div>
         </div>
     </div>
-    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-
-</html>
+<%- include('partials/footer.ejs'); %>

@@ -7,7 +7,7 @@ return async(req, res, next) => {
     if(!token){
         res.status(404)
         req.flash("info", "Invalid user credentials!")
-        return res.redirect("/login")
+        return res.redirect("/pages/login")
     }
 
     // verify token
@@ -15,7 +15,7 @@ return async(req, res, next) => {
     if(userData.role != role){
         res.status(404)
         req.flash("info", "Invalid user credentials!")
-        return res.redirect("/login")
+        return res.redirect("/pages/login")
     }
 
     req.user = userData

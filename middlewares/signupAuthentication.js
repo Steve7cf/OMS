@@ -8,7 +8,7 @@ return async(req, res, next) => {
     if(!token){
         res.status(404)
         req.flash("info", "signup Token Not found!")
-        return res.redirect("/token")
+        return res.redirect("/pages/token")
     }
 
     // verify token
@@ -16,7 +16,7 @@ return async(req, res, next) => {
     if(userData.role != role){
         res.status(404)
         req.flash("info", "Invalid user credentials!")
-        return res.redirect("/token")
+        return res.redirect("/pages/token")
     }
     next()
 }
