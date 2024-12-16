@@ -22,7 +22,6 @@ route.get("/login", rest.login)
 route.get("/admin", rest.adminPanel)
 
 // admin routes
-route.post("/createAdmin", rest.createAdmin)
 route.post("/authadmin", rest.authAdmin)
 route.get('/dashboard',adminAuthentication("admin"), rest.dashboard)
 route.post('/genToken',adminAuthentication("admin"), rest.genToken)

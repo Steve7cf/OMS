@@ -137,35 +137,6 @@ const authAdmin= async(req, res) => {
   }
 }
 
-
-// const createAdmin= async (req, res) => {
-//   const{username,email, password} = req.body
-
-
-
-//   // hash password
-//   const salt = await bcrypt.genSalt(10)
-//   const hashedPassword = await bcrypt.hash(password, salt)
-
-//   // user object/debugging purpose
-//   const userObj = {userName:username,email:email, password:hashedPassword}
-
-//   // create new user
-//   try {
-//       const newUserRecord = await adminModel.create(userObj)
-//       if(!newUserRecord){
-//         res.status(500)
-//         return res.send("Whoops! can't new Admin")
-//       }
-//       if(newUserRecord){
-//         res.status(201)
-//         return res.redirect('/login')
-//       }
-//   } catch (err) {
-//     console.log(err.message)
-//   }
-// }
-
 const adminPanel = (req, res) => {
   res.render("admin")
 }
@@ -260,7 +231,6 @@ module.exports = {
   deleteUser,
   signup,
   login,
-  createAdmin,
   updateOrder,
   deleteOrder,
   createOrder,
