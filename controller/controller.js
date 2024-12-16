@@ -195,7 +195,8 @@ const createOrder = async(req, res) => {
       throw new Error('Internal Server Error!')
     }
 
-    res.send(newOrder)
+    res.status(201)
+    res.redirect('/orderPage')
   } catch (err) {
     next(err)
   }
