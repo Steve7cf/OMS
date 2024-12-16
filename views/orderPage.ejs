@@ -1,5 +1,366 @@
 <%- include('partials/header.ejs'); %>
-<body>
-    <h1>hello you have created your first order use our mobile app to track</h1>
-</body>
-<%- include('partials/footer.ejs'); %>
+
+<body class="d-flex flex-column overflow-auto
+h-100 bg-success text-dark">
+    <style>
+        body{
+            background: linear-gradient(
+    to top,
+    #0c0c0c,#2c3e50
+  );
+        }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+        body{
+            background-color: orange;
+        }
+      }
+
+      .b-example-divider {
+        width: 100%;
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .btn-bd-primary {
+        --bd-violet-bg: #712cf9;
+        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+
+        --bs-btn-font-weight: 600;
+        --bs-btn-color: var(--bs-white);
+        --bs-btn-bg: var(--bd-violet-bg);
+        --bs-btn-border-color: var(--bd-violet-bg);
+        --bs-btn-hover-color: var(--bs-white);
+        --bs-btn-hover-bg: #6528e0;
+        --bs-btn-hover-border-color: #6528e0;
+        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+        --bs-btn-active-color: var(--bs-btn-hover-color);
+        --bs-btn-active-bg: #5a23c8;
+        --bs-btn-active-border-color: #5a23c8;
+      }
+
+      .bd-mode-toggle {
+        z-index: 1500;
+      }
+
+      .bd-mode-toggle .dropdown-menu .active .bi {
+        display: block !important;
+      }
+
+      /* cards */
+      .order-card {
+    color: #fff;
+}
+
+.bg-c-blue {
+    background: linear-gradient(45deg,#1f4b7d,#3773b8);
+}
+
+.bg-c-green {
+    background: linear-gradient(45deg,#2ed8b6,#59e0c5);
+}
+
+.bg-c-yellow {
+    background: linear-gradient(45deg,#FFB64D,#ffcb80);
+}
+
+.bg-c-pink {
+    background: linear-gradient(45deg,#FF5370,#ff869a);
+}
+
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    box-shadow: 0 1px 2.94px 0.06px rgba(4,26,55,0.16);
+    border: none;
+    margin-bottom: 30px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+    padding: 25px;
+}
+
+.order-card i {
+    font-size: 26px;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+.sidebar{
+    background: linear-gradient(
+    to top,
+    #0c0c0c,#2c3e50
+  );
+}
+.offcanvas-md{
+    background: linear-gradient(
+    to top,
+    #0c0c0c,#2c3e50
+  );
+    padding: 1rem;
+    height: 100%;
+}
+    </style>
+
+  </head>
+  <body>
+<header class="navbar sticky-top bg-transparent flex-md-nowrap p-0" data-bs-theme="dark">
+  <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6" href="#" style="color: orange;">TANAIR CARGO</a>
+
+  <ul class="navbar-nav flex-row d-md-none">
+    <li class="nav-item text-nowrap">
+      <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa fa-bars"></i>
+      </button>
+    </li>
+  </ul>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="sidebar  col-md-3 col-lg-2 p-0">
+      <div class="offcanvas-md offcanvas-start" tabindex="-1" id="sidebarMenu" aria-labelledby="sidebarMenuLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="sidebarMenuLabel" style="color: orange;">TANAIR CARGO</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#sidebarMenu" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-md-flex flex-column p-0 pt-lg-3 overflow-y-auto my-5">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2 active fs-6 text-light" aria-current="page" href="/orderPage">
+                <i class="fa fa-shopping-cart"></i>
+                My Orders
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2 fs-6 text-light" href="/">
+                <i class="fa fa-home"></i>
+                Home
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2 fs-6 text-light" href="#">
+                <i class="fa fa-user"></i>
+                profile
+              </a>
+            </li>
+          </ul>
+
+          <hr class="my-3">
+
+          <ul class="nav flex-column mb-auto">
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2 fs-6 text-light" href="#">
+                <i class="fa fa-gear"></i>
+                Settings
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link d-flex align-items-center gap-2 fs-6 text-light" href="/logoutUser">
+                <i class="fa fa-sign-out"></i>
+                Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" style="height: 100vh;">
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <h1 class="h2 text-light">Orders</h1>
+        <strong class="text-primary">welcome back Stephan Mwita</strong>
+      </div>
+
+      <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
+        <h1 class="h2 text-light">#</h1>
+        <div class="col-md-3 d-flex align-items-center justify-content-space-evenly">
+            <i class="fa fa-sort text-light me-3 fs-4"></i>
+            <select class="form-control">
+                <option>Order Id</option>
+                <option>customer name</option>
+                <option>Product name</option>
+                <option>status</option>
+            </select>
+        </div>
+      </div>
+
+      <section class="col-md-12 row" style="height: 600px; overflow-y: scroll;">
+        <!-- order card start -->
+        <div class="container col-md-8 bg-light rounded-4 shadow-lg my-3" style="height: 500px;">
+            <div class="container-fluid  d-flex justify-content-between align-items-center" style="height: 20%;">
+                <div class="container-fluid w-100 d-flex align-items-center justify-content-start">
+                    <i class="fa fa-shopping-cart fs-4 text-primary ms-1"></i>
+                    <strong class="fs-4">Order Id#</strong>
+                    <span class="fs-4 mx-0" style="font-weight: 800; letter-spacing: 0.2rem;color: #ff869a;">AM7XV3</span>
+                </div>
+            </div>
+            <div class="container bg-light mb-1 rounded-3" style="height: 62%;">
+                <p class="p-1 py-0"><i class="fa fa-user fs-4 me-3 text-primary"></i> <span class="fs-5">Stephan Bazaar</span></p>
+                <p class="p-1 py-0"><i class="fa fa-shopping-bag fs-4 me-3 text-primary"></i> <span class="fs-5">Rasberry Pi 5</span></p>
+                <p class="p-1 py-0"><i class="fa fa-credit-card fs-4 me-3 text-primary"></i><span class="fs-5">100</span>$</p>
+                <p class="p-1 py-0"><i class="fa fa-shopping-basket fs-4 me-3 text-primary"></i> <span class="fs-5">100</span></p>
+                <p class="p-1 py-0"><i class="fa fa-phone fs-4 me-3 text-primary"></i> <span class="fs-5">0654120626</span></p>
+                <p class="p-1 py-0"><i class="fa fa-home fs-4 me-3 text-primary"></i> <span class="fs-5">ilala, Dar es salaam Tanzania</span></p>
+                <p class="p-1 py-0"><i class="fa fa-envelope fs-4 me-3 text-primary"></i> <span class="fs-5">Stephan@gmail.com</span></p>
+            </div>
+            <div class="container  d-flex justify-content-end align-items-center" style="height: 16%;">
+                <div class="container">
+                    <span class="text-success fs-4">status:</span>
+                    <span class="fs-4" style="color: #2ed8b6;font-weight: 800;">Pending</span>
+                </div>
+                <div class="w-75 d-flex justify-content-center align-items-end gap-2">
+                    <a href="#" class="btn btn-primary p-1" style="width: 100px;">Edit Order</a>
+                    <a href="#" class="btn btn-danger text-light" style="text-decoration: none; width: 110px;">Delete</a>
+                </div>
+            </div>
+        </div>
+        <!-- order card end -->
+
+        <div class="container col-md-8 bg-light rounded-4 shadow-lg my-3" style="height: 500px;">
+            <div class="container-fluid  d-flex justify-content-between align-items-center" style="height: 20%;">
+                <div class="container-fluid w-100 d-flex align-items-center justify-content-start">
+                    <i class="fa fa-shopping-cart fs-4 text-primary ms-1"></i>
+                    <strong class="fs-4">Order Id#</strong>
+                    <span class="fs-4 mx-0" style="font-weight: 800; letter-spacing: 0.2rem;color: #ff869a;">AM7XV3</span>
+                </div>
+            </div>
+            <div class="container bg-light mb-1 rounded-3" style="height: 62%;">
+                <p class="p-1 py-0"><i class="fa fa-user fs-4 me-3 text-primary"></i> <span class="fs-5">Stephan Bazaar</span></p>
+                <p class="p-1 py-0"><i class="fa fa-shopping-bag fs-4 me-3 text-primary"></i> <span class="fs-5">Rasberry Pi 5</span></p>
+                <p class="p-1 py-0"><i class="fa fa-credit-card fs-4 me-3 text-primary"></i><span class="fs-5">100</span>$</p>
+                <p class="p-1 py-0"><i class="fa fa-shopping-basket fs-4 me-3 text-primary"></i> <span class="fs-5">100</span></p>
+                <p class="p-1 py-0"><i class="fa fa-phone fs-4 me-3 text-primary"></i> <span class="fs-5">0654120626</span></p>
+                <p class="p-1 py-0"><i class="fa fa-home fs-4 me-3 text-primary"></i> <span class="fs-5">ilala, Dar es salaam Tanzania</span></p>
+                <p class="p-1 py-0"><i class="fa fa-envelope fs-4 me-3 text-primary"></i> <span class="fs-5">Stephan@gmail.com</span></p>
+            </div>
+            <div class="container  d-flex justify-content-end align-items-center" style="height: 16%;">
+                <div class="container">
+                    <span class="text-success fs-4">status:</span>
+                    <span class="fs-4" style="color: #2ed8b6;font-weight: 800;">Pending</span>
+                </div>
+                <div class="w-75 d-flex justify-content-center align-items-end gap-2">
+                    <a href="#" class="btn btn-primary p-1" style="width: 100px;">Edit Order</a>
+                    <a href="#" class="btn btn-danger text-light" style="text-decoration: none; width: 110px;">Delete</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container col-md-8 bg-light rounded-4 shadow-lg my-3" style="height: 500px;">
+            <div class="container-fluid  d-flex justify-content-between align-items-center" style="height: 20%;">
+                <div class="container-fluid w-100 d-flex align-items-center justify-content-start">
+                    <i class="fa fa-shopping-cart fs-4 text-primary ms-1"></i>
+                    <strong class="fs-4">Order Id#</strong>
+                    <span class="fs-4 mx-0" style="font-weight: 800; letter-spacing: 0.2rem;color: #ff869a;">AM7XV3</span>
+                </div>
+            </div>
+            <div class="container bg-light mb-1 rounded-3" style="height: 62%;">
+                <p class="p-1 py-0"><i class="fa fa-user fs-4 me-3 text-primary"></i> <span class="fs-5">Stephan Bazaar</span></p>
+                <p class="p-1 py-0"><i class="fa fa-shopping-bag fs-4 me-3 text-primary"></i> <span class="fs-5">Rasberry Pi 5</span></p>
+                <p class="p-1 py-0"><i class="fa fa-credit-card fs-4 me-3 text-primary"></i><span class="fs-5">100</span>$</p>
+                <p class="p-1 py-0"><i class="fa fa-shopping-basket fs-4 me-3 text-primary"></i> <span class="fs-5">100</span></p>
+                <p class="p-1 py-0"><i class="fa fa-phone fs-4 me-3 text-primary"></i> <span class="fs-5">0654120626</span></p>
+                <p class="p-1 py-0"><i class="fa fa-home fs-4 me-3 text-primary"></i> <span class="fs-5">ilala, Dar es salaam Tanzania</span></p>
+                <p class="p-1 py-0"><i class="fa fa-envelope fs-4 me-3 text-primary"></i> <span class="fs-5">Stephan@gmail.com</span></p>
+            </div>
+            <div class="container  d-flex justify-content-end align-items-center" style="height: 16%;">
+                <div class="container">
+                    <span class="text-success fs-4">status:</span>
+                    <span class="fs-4" style="color: #2ed8b6;font-weight: 800;">Pending</span>
+                </div>
+                <div class="w-75 d-flex justify-content-center align-items-end gap-2">
+                    <a href="#" class="btn btn-primary p-1" style="width: 100px;">Edit Order</a>
+                    <a href="#" class="btn btn-danger text-light" style="text-decoration: none; width: 110px;">Delete</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container col-md-8 bg-light rounded-4 shadow-lg my-3" style="height: 500px;">
+            <div class="container-fluid  d-flex justify-content-between align-items-center" style="height: 20%;">
+                <div class="container-fluid w-100 d-flex align-items-center justify-content-start">
+                    <i class="fa fa-shopping-cart fs-4 text-primary ms-1"></i>
+                    <strong class="fs-4">Order Id#</strong>
+                    <span class="fs-4 mx-0" style="font-weight: 800; letter-spacing: 0.2rem;color: #ff869a;">AM7XV3</span>
+                </div>
+            </div>
+            <div class="container bg-light mb-1 rounded-3" style="height: 62%;">
+                <p class="p-1 py-0"><i class="fa fa-user fs-4 me-3 text-primary"></i> <span class="fs-5">Stephan Bazaar</span></p>
+                <p class="p-1 py-0"><i class="fa fa-shopping-bag fs-4 me-3 text-primary"></i> <span class="fs-5">Rasberry Pi 5</span></p>
+                <p class="p-1 py-0"><i class="fa fa-credit-card fs-4 me-3 text-primary"></i><span class="fs-5">100</span>$</p>
+                <p class="p-1 py-0"><i class="fa fa-shopping-basket fs-4 me-3 text-primary"></i> <span class="fs-5">100</span></p>
+                <p class="p-1 py-0"><i class="fa fa-phone fs-4 me-3 text-primary"></i> <span class="fs-5">0654120626</span></p>
+                <p class="p-1 py-0"><i class="fa fa-home fs-4 me-3 text-primary"></i> <span class="fs-5">ilala, Dar es salaam Tanzania</span></p>
+                <p class="p-1 py-0"><i class="fa fa-envelope fs-4 me-3 text-primary"></i> <span class="fs-5">Stephan@gmail.com</span></p>
+            </div>
+            <div class="container  d-flex justify-content-end align-items-center" style="height: 16%;">
+                <div class="container">
+                    <span class="text-success fs-4">status:</span>
+                    <span class="fs-4" style="color: #2ed8b6;font-weight: 800;">Pending</span>
+                </div>
+                <div class="w-75 d-flex justify-content-center align-items-end gap-2">
+                    <a href="#" class="btn btn-primary p-1" style="width: 100px;">Edit Order</a>
+                    <a href="#" class="btn btn-danger text-light" style="text-decoration: none; width: 110px;">Delete</a>
+                </div>
+            </div>
+        </div>
+      </section>
+      
+    </div>
+    </main>
+  </div>
+</div>
+<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.3.2/dist/chart.umd.js" integrity="sha384-eI7PSr3L1XLISH8JdDII5YN/njoSsxfbrkCTnJrzXt+ENP5MOVBxD+l6sEG4zoLp" crossorigin="anonymous"></script>
+<script src="js/dashboard.js"></script></body>
+</html>
