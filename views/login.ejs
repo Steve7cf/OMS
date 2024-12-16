@@ -28,6 +28,12 @@
                 <div class="card mt-5">
                     <div class="card-body">
                         <h5 class="card-title text-center">Get Verified</h5>
+                        <% if (error.length != 0) { %>
+                              <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                <strong><%= error %></strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                              </div>
+                          <% } %>
                         <form action="/auth" method="post" target="_parent">
                             <div class="mb-3">
                                 <label for="username" class="form-label">Email</label>

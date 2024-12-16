@@ -9,6 +9,7 @@ const path = require("path");
 const logger = require("morgan");
 const flash = require("connect-flash");
 const mongoose = require("mongoose");
+const helmet = require('helmet')
 
 // session
 const store = new mongodbSession({
@@ -40,6 +41,7 @@ app.use(
 app.use(express.static(path.join(__dirname, "public")));
 app.use(logger("dev"));
 app.use(flash());
+app.use(helmet())
 
 // routes
 const routes = require("./routes/routes");
@@ -61,3 +63,16 @@ try {
 } catch (err) {
     console.log(err.message)
 }
+
+// error handling
+function errorHandler(err, req, res, next) {
+  console.error(err.message);
+  const statusCode = err.statusCode || 500;
+  const errMessage = req.flash("error")
+  console.log(errMessage)
+  res.status(statusCode).render("403", {error:err.message, status:statusCode});
+  
+}
+
+
+app.use(errorHandler);

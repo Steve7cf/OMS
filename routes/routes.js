@@ -9,7 +9,7 @@ const adminAuthentication = require('../middlewares/adminAuthentication')
 route.get('/', rest.index)
  
 route.get('/order',userAuthentication("user"), rest.order)
-
+route.get('/createAdmin', rest.createAdmin)
 
 
 // users routes
@@ -30,6 +30,7 @@ route.post('/genToken',adminAuthentication("admin"), rest.genToken)
 route.post("/createOrder",userAuthentication("user"), rest.createOrder)
 route.patch("/updateOrder",adminAuthentication("user"), rest.updateOrder)
 route.delete("/deleteOrder",adminAuthentication("admin"), rest.deleteOrder)
+route.get('/orderPage', rest.orderPage)
 
 // other routes
 route.get('/token', rest.token)

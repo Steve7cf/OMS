@@ -6,16 +6,16 @@ return async(req, res, next) => {
     const token = req.cookies.topSecret
     if(!token){
         res.status(404)
-        req.flash("info", "No User Token Found!")
-        return res.redirect("/admin")
+        req.flash("info", "Invalid user credentials!")
+        return res.redirect("/login")
     }
 
     // verify token
     const userData = await jwt.verify(token, process.env.ACCESS_TOKEN)
     if(userData.role != role){
         res.status(404)
-        req.flash("info", "Login Please")
-        return res.redirect("/admin")
+        req.flash("info", "Invalid user credentials!")
+        return res.redirect("/login")
     }
 
     req.user = userData
